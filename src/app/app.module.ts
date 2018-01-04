@@ -12,6 +12,10 @@ import { PagesModule } from './pages/pages.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './login/register.component';
+
+// Servicios
+import { ServiceModule } from './services/service.module';
+// import { SettingsService } from './services/service.index';
 // import { IncrementadorComponent } from './components/incrementador/incrementador.component';
 
 @NgModule({
@@ -22,7 +26,11 @@ import { RegisterComponent } from './login/register.component';
     // IncrementadorComponent
   ],
   imports: [
-    BrowserModule, APP_ROUTES, PagesModule, FormsModule
+    BrowserModule, 
+    APP_ROUTES, 
+    PagesModule, 
+    FormsModule,
+    ServiceModule
   ],
   providers: [],
   bootstrap: [AppComponent]
