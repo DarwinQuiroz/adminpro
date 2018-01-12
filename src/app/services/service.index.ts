@@ -4,3 +4,5 @@ export { SidebarService } from './shared/sidebar.service';
 export { UsuarioService } from './usuario/usuario.service';
 
 export { LoginGuard } from './guards/login-guard.guard';
+export { UploadImageService } from './uploads/upload-image.service';
+

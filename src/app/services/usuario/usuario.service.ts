@@ -4,15 +4,19 @@ import { HttpClient } from '@angular/common/http';
 import { URL_SERVICIOS } from '../../config/config';
 import 'rxjs/add/operator/map';
 import { Router } from '@angular/router';
+import { UploadImageService } from '../uploads/upload-image.service';
 
 @Injectable()
 export class UsuarioService 
 {
   url: string;
   usuario: Usuario;
-  token: string;
+  token;
 
-  constructor(public http: HttpClient, public router: Router)
+  constructor(
+    public http: HttpClient, 
+    public router: Router,
+    public uploadImage: UploadImageService)
   {
     this.url = URL_SERVICIOS;
     this.cargarStorage();
@@ -54,6 +58,29 @@ export class UsuarioService
     });
   }
 
+  actalizar(usuario: Usuario)
+  {
+    this.url += 'usuario/' + usuario._id + '?token=' + this.token;
+    console.log(this.url);
+    return this.http.put(this.url, usuario).map((res: any) => {
+      swal('Usuario Actualizado', usuario.nombre, 'success');
+      this.guardarStorage(res.usuario._id, this.token, res.usuario);
+      return true;
+    });
+  }
+
+  cambiarImagen(archivo: File, id: string)
+  {
+    this.uploadImage.subir(archivo, 'usuarios', id)
+        .then((res:any) => {
+          this.usuario.imagen = res.usuario.imagen;
+          swal('Imágen Actualizada.!', this.usuario.nombre, 'success');
+          this.guardarStorage(id, this.token, this.usuario);
+        })
+        .catch(error => {
+          console.log(error);
+        });
+  }
 
   login(usuario: Usuario, recordar:boolean = false)
   {

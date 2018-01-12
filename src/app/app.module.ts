@@ -15,15 +15,12 @@ import { RegisterComponent } from './login/register.component';
 
 // Servicios
 import { ServiceModule } from './services/service.module';
-// import { SettingsService } from './services/service.index';
-// import { IncrementadorComponent } from './components/incrementador/incrementador.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    RegisterComponent,
-    // IncrementadorComponent
+    RegisterComponent
   ],
   imports: [
     BrowserModule, 
