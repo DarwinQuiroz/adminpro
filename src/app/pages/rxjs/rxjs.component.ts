@@ -13,18 +13,18 @@ export class RxjsComponent implements OnInit, OnDestroy
 
   constructor() 
   {
-    this.subscription = this.regresaObservable().subscribe(
-      numero => console.log('Subs ' + numero),
-      error => console.error('Error (2 veces): ' + error),
-      () => console.log('El observador terminó')
-    );
+    // this.subscription = this.regresaObservable().subscribe(
+    //   numero => console.log('Subs ' + numero),
+    //   error => console.error('Error (2 veces): ' + error),
+    //   () => console.log('El observador terminó')
+    // );
   }
 
   ngOnInit() { }
   
   ngOnDestroy() 
   {
-    this.subscription.unsubscribe();
+    // this.subscription.unsubscribe();
   }
 
 

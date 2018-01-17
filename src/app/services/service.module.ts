@@ -9,6 +9,7 @@ import {
   UploadImageService } from './service.index';
 
 import { HttpClientModule } from '@angular/common/http';
+import { ModalUploadService } from '../components/modal-upload/modal-upload.service';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { HttpClientModule } from '@angular/common/http';
     SharedService, 
     UsuarioService, 
     LoginGuard,
-    UploadImageService
+    UploadImageService,
+    ModalUploadService
   ],
   declarations: []
 })

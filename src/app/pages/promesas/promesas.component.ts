@@ -9,8 +9,8 @@ export class PromesasComponent implements OnInit {
 
   constructor() 
   {
-    this.contarTres().then( () => console.log('Terminó.!'))
-           .catch(error => console.error('Error en la promesa: '+error));
+    // this.contarTres().then( () => console.log('Terminó.!'))
+    //        .catch(error => console.error('Error en la promesa: '+error));
   }
 
   ngOnInit() {
