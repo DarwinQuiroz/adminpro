@@ -18,11 +18,13 @@ export class ImagenPipe implements PipeTransform {
     // switch(tipo)
     // {
     //   case 'usuario':
-    //     url += 'usuario'
+    //   url += '/usuarios/' + imagen;
     //   break;
     //   case 'medico':
+    //   url += '/medicos/' + imagen;
     //   break;
     //   case 'hospital':
+    //   url += '/medicos/' + imagen;  // <----- AQUI ES EL PROBLEMA
     //   break;
     // }
   }
