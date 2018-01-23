@@ -1,0 +1,78 @@
+<div class="row">
+    <div class="col-4">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Usuarios</h4>
+
+                <table class="table table-hover" *ngIf="usuarios.length > 0; else noUsuarios">
+                    <tbody>
+                        <tr *ngFor="let usuario of usuarios" routerLink="/usuarios" class="pointer">
+                            <td>
+                                <img [src]="usuario.imagen | imagen" class="img-50 img-responsive rounded">
+                            </td>
+                            <td>{{ usuario.nombre }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <ng-template #noUsuarios>
+                    <div class="alert alert-info">
+                        No hay usuarios para esta búsqueda.
+                    </div>
+                </ng-template>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-4">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Médicos</h4>
+
+                <table class="table table-hover" *ngIf="medicos.length > 0; else noMedicos">
+                    <tbody>
+                        <tr *ngFor="let medico of medicos" [routerLink]="['/medico', medico._id]" class="pointer">
+                            <td>
+                                <img [src]="medico.imagen | imagen:'medicos'" class="img-50 img-responsive rounded">
+                            </td>
+                            <td>{{ medico.nombre }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <ng-template #noMedicos>
+                    <div class="alert alert-info">
+                        No hay médicos para esta búsqueda.
+                    </div>
+                </ng-template>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-4">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Hospitales</h4>
+
+                <table class="table table-hover" *ngIf="hospitales.length > 0; else noHospitales">
+                    <tbody>
+                        <tr *ngFor="let hospital of hospitales" routerLink="/hospitales" class="pointer">
+                            <td>
+                                <img [src]="hospital.imagen | imagen:'hospitales'" class="img-50 img-responsive rounded">
+                            </td>
+                            <td>
+                                {{ hospital.nombre }}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <ng-template #noHospitales>
+                    <div class="alert alert-info">
+                        No hay hospitales para esta búsqueda.
+                    </div>
+                </ng-template>
+            </div>
+        </div>
+    </div>
+</div>
