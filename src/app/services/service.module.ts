@@ -9,10 +9,12 @@ import {
   UploadImageService,
   MedicoService,
   LoginGuard,
-  AdminGuard } from './service.index';
+  AdminGuard,
+  VerificaTokenGuard } from './service.index';
 
 import { HttpClientModule } from '@angular/common/http';
 import { ModalUploadService } from '../components/modal-upload/modal-upload.service';
+
 
 
 @NgModule({
@@ -26,6 +28,7 @@ import { ModalUploadService } from '../components/modal-upload/modal-upload.serv
     UsuarioService, 
     LoginGuard,
     AdminGuard,
+    VerificaTokenGuard,
     UploadImageService,
     ModalUploadService,
     HospitalService,

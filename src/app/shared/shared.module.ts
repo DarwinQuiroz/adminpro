@@ -7,19 +7,22 @@ import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
 import { HeaderComponent } from './header/header.component';
 import { NopagefoundComponent } from './nopagefound/nopagefound.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { ModalUploadComponent } from '../components/modal-upload/modal-upload.component';
 
 @NgModule({
     declarations: [
         NopagefoundComponent,
         BreadcrumbsComponent,
         HeaderComponent,
-        SidebarComponent
+        SidebarComponent,
+        ModalUploadComponent
     ],
     exports: [
         NopagefoundComponent,
         BreadcrumbsComponent,
         HeaderComponent,
-        SidebarComponent
+        SidebarComponent,
+        ModalUploadComponent
     ],
     imports: [
         RouterModule, CommonModule, PipesModule
